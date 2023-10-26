@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "./Image";
 
 class Card extends React.Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class Card extends React.Component {
       this.props.cardResults;
 
     return (
-      <div style={{ border: "1px solid black" }} onClick={this.handleClick}>
+      <div className="card" style={{ border: "1px solid black" }} onClick={this.handleClick}>
         {this.state.clicked && (
           <div>
             <p>Price: {price}</p>
@@ -27,11 +28,7 @@ class Card extends React.Component {
           </div>
         )}
         <h1>{name}</h1>
-        <img
-          alt="alt"
-          src={image}
-          style={{ maxWidth: 100, maxHeight: "auto" }}
-        ></img>
+          <Image src={image} />
         <p>{type}</p>
         <p>{brandName}</p>
       </div>

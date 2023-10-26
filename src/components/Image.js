@@ -1,8 +1,16 @@
 import React from "react";
     
-function Image(props) {
+function Image({ src }) {
+    const defaultNoImageSrc = 'https://tacm.com/wp-content/uploads/2018/01/no-image-available.jpeg';
     return (
-        <img className={props.className} src={`${props.src}`} width={props.width} alt={`${props.alt}`}/>
+        <img
+            src={src || defaultNoImageSrc}
+            style={{
+                maxWidth: 100,
+                maxHeight: "auto"
+            }}
+            alt={src? "alt" : "No image available"}
+        />
     );
 }
 
