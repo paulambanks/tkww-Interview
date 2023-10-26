@@ -88,9 +88,7 @@ function App() {
       <div className="container">
           <h1>Results: </h1>
           {loading && (<div>Loading.....</div>)}
-          {error && (
-              <div>{error}</div>
-          )}
+          {error && (<div>ERROR: {error.message}</div>)}
           {products && (<div className="cards">{cardResults}</div>)}
       </div>
       <div style={{ marginTop: 30 }} className="footer">
